@@ -13,7 +13,7 @@ root = tk.Tk()
 
 root.winfo_toplevel().title("Avamotes")
 
-canvas = tk.Canvas(root, width = 300, height = 300)
+canvas = tk.Canvas(root, width = 300, height = 330)
 canvas.pack()
 
 
@@ -80,6 +80,9 @@ def setEntryTexts():
     img4TextLabel.set(settings["4"])
     img5TextLabel.set(settings["5"])
     img6TextLabel.set(settings["6"])
+    img7TextLabel.set(settings["7"])
+    img8TextLabel.set(settings["8"])
+    img9TextLabel.set(settings["9"])
 
 def init():
     if not fileExists(settingsFile):
@@ -91,7 +94,10 @@ def init():
             "3": "",
             "4": "",
             "5": "",
-            "6": ""
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": ""
         }
         updateSettings(defaultSettings)
 
@@ -162,8 +168,35 @@ canvas.create_window(180, 200, window=img6Label)
 img6Button = tk.Button(text='Hotkey 6',command=lambda:setImagePath("6", img6TextLabel), bg='brown',fg='white')
 canvas.create_window(60, 200, window=img6Button)
 
+# Image 7
+img7TextLabel = tk.StringVar()
+img7TextLabel.set("Hello World!")
+img7Label = tk.Entry(root, textvariable=img7TextLabel)
+canvas.create_window(180, 230, window=img7Label)
+
+img7Button = tk.Button(text='Hotkey 7',command=lambda:setImagePath("7", img7TextLabel), bg='brown',fg='white')
+canvas.create_window(60, 230, window=img7Button)
+
+# Image 8
+img8TextLabel = tk.StringVar()
+img8TextLabel.set("Hello World!")
+img8Label = tk.Entry(root, textvariable=img8TextLabel)
+canvas.create_window(180, 260, window=img8Label)
+
+img8Button = tk.Button(text='Hotkey 8',command=lambda:setImagePath("8", img8TextLabel), bg='brown',fg='white')
+canvas.create_window(60, 260, window=img8Button)
+
+# Image 9
+img9TextLabel = tk.StringVar()
+img9TextLabel.set("Hello World!")
+img9Label = tk.Entry(root, textvariable=img9TextLabel)
+canvas.create_window(180, 290, window=img9Label)
+
+img9Button = tk.Button(text='Hotkey 9',command=lambda:setImagePath("9", img9TextLabel), bg='brown',fg='white')
+canvas.create_window(60, 290, window=img9Button)
+
 def keyHandler(event):
-    # print(event.scan_code)
+    print(event.scan_code)
     if event.scan_code == 79:
         changeEmote("1")
         time.sleep(1)
@@ -177,6 +210,12 @@ def keyHandler(event):
         changeEmote("5")
     if event.scan_code == 77:
         changeEmote("6")
+    if event.scan_code == 71:
+        changeEmote("7")
+    if event.scan_code == 72:
+        changeEmote("8")
+    if event.scan_code == 73:
+        changeEmote("9")
 
 keyboard.on_press(keyHandler, suppress=False)
 
