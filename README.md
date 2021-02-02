@@ -1,6 +1,6 @@
 # AvaMotes
 
-A small python program to display 9 different expressions for 2D only streamers using OBS.
+A small python program to display 9 different expressions for 2D only streamers using OBS. Currently only supports Windows but if you know Python commands, you can make it work on Mac or Linux.
 
 ### How to use
 
