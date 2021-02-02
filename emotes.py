@@ -11,6 +11,8 @@ currentFile = "/__current.png"
 settings = {}
 root = tk.Tk()
 
+root.winfo_toplevel().title("Avamotes")
+
 canvas = tk.Canvas(root, width = 300, height = 300)
 canvas.pack()
 
